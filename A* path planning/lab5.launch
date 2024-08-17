@@ -1,0 +1,14 @@
+<!--suppress XmlHighlighting -->
+<launch>
+	<include file="$(find husky_gazebo)/launch/playpen.launch"/>
+	<include file="$(find husky_gazebo)/launch/spawn_husky.launch"/>
+	<node type="lab5.py" name="lab5" pkg="lab5" output="screen" >
+		<param type="double" name="goalX" value="1.0"/>
+		<param type="double" name="goalY" value="0.0"/>
+		<param type="str" name="heuristicFn" value="diagonalAndLinear"/>
+		<!-- Possible values for heuristic fn
+			1. euclidean (default)
+			2. diagonalAndLinear
+		 -->
+	</node>
+</launch>
